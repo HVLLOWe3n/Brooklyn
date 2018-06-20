@@ -143,9 +143,22 @@ REST_FRAMEWORK = {
 }
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.facebook.FacebookAppOAuth2',
+    
     # django-rest-framework-social-oauth2
     'rest_framework_social_oauth2.backends.DjangoOAuth2',
 
     # Django
     'django.contrib.auth.backends.ModelBackend',
 )
+
+# Facebook Configuration
+SOCIAL_AUTH_FACEBOOK_KEY = '610962779267187'
+SOCIAL_AUTH_FACEBOOK_SECRET = '6b28a8519c94475ea8f52c9c87bf2d84'
+
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id, name, email'
+}
