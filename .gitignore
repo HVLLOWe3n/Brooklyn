@@ -110,3 +110,7 @@ venv.bak/
 .idea/
 .idea
 idea/
+
+
+# All django migrations
+migrations/*.py
