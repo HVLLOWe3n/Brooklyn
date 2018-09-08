@@ -1,1 +1,1 @@
-web: gunicorn BytesPal.wsgi —-log-file -
+web: gunicorn Brooklyn.wsgi —-log-file -
