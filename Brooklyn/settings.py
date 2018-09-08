@@ -79,13 +79,24 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'brooklyn_test',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Pass12345',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'brooklyn_test',
-        'USER': 'postgres',
-        'PASSWORD': 'Pass12345',
-        'HOST': 'localhost',
+        'NAME': 'da54b58a2b7a3l',
+        'USER': 'cigluvmdipsymi',
+        'PASSWORD': '877209d8bc4e0dfcbc12d8f3ae1b27057b27ab4200e8f08a68b76c9ffcc2af8c',
+        'HOST': 'ec2-54-217-245-9.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -129,7 +140,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static-files", "static-root")
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = "account.User"
 
