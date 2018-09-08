@@ -10,6 +10,7 @@ from account.utils import upload_location_avatar
 
 
 # TODO: Fix this trouble.
+# TODO: Fixed
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
@@ -24,7 +25,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError("Error - The Given email mustbe set")
         email = self.normalize_email(email)
-        user = self.model(email)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
 
@@ -52,7 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_("last name"), max_length=30, blank=True)
     date_joined = models.DateTimeField(_("date joined"), auto_now_add=True)
     is_active = models.BooleanField(default=True)
-    is_stuff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     avatar = models.ImageField(upload_to=upload_location_avatar,
                                blank=True, null=True,
                                default="/static/img/avatar/avatar.png")
