@@ -1,5 +1,6 @@
 certifi==2018.8.13
 Django==2.1
+django-jet==1.0.7
 Pillow==5.2.0
 pipenv==2018.7.1
 psycopg2==2.7.5
@@ -7,3 +8,4 @@ psycopg2-binary==2.7.5
 pytz==2018.5
 virtualenv==16.0.0
 virtualenv-clone==0.3.0
+whitenoise==4.0
