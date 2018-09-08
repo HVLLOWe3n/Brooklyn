@@ -41,8 +41,10 @@
             </form>
             <nav class="navbar ">
                 <form class="form-inline">
-                    <button class="btn btn-outline-success" type="button">Sign Up</button>
-                    <button class="btn btn-outline-secondary" type="button">Sign In</button>
+                    {% if not user.is_authenticated %}
+                        <button class="btn btn-outline-success" type="button">Sign Up</button>
+                        <button class="btn btn-outline-secondary" id="signin__button" type="button">Sign In</button>
+                    {% endif %}
                 </form>
             </nav>
 
