@@ -1,7 +1,12 @@
 <!--Here must be create header for -->
 {% block header %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Brooklyn</a>
+
+        <!--<a href="#menu-toggle" class="btn btn-outline-danger" id="menu-toggle" onclick=""><i class="fas fa-bars"></i></a>-->
+        <span class="navbar-toggler-icon" id="menu-toggle"></span>
+        <!--<img src="/static/img/Brooklyn%20Logo.png" width="125" height="45" alt="">-->
+        <a class="navbar-brand" href="/">Brooklyn</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,28 +18,26 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Library</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        For You <i class="fas fa-heart"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Random track</a>
+                        <a class="dropdown-item" href="#">Random Album</a>
+                        <a class="dropdown-item" href="#">Sign Out</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Find you preferences"
                        aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                </button>
             </form>
             <nav class="navbar ">
                 <form class="form-inline">
@@ -45,4 +48,5 @@
 
         </div>
     </nav>
+
 {% endblock %}
