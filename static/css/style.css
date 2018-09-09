@@ -1,15 +1,17 @@
-#fa-bars {
+@font-face {
+    font-family: Night_Machine;
+    src: url("/static/fonts/Night_Machine.otf");
+}
+
+#brooklyn_main_text {
+  font-family: "Night_Machine", serif;
+}
+
+#mdb-color {
+    background: #000000;
     color: white;
 }
 
-#signin__button {
-    padding: 0;
-    border: none;
-    background: none;
-}
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
+#for__you {
+    color: hotpink;
 }

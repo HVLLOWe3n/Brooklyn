@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nc&@^=26@iwdg0t#v9x3b+9iw@%7c=%^ih#_1li!-z_#cc+xqx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost']
 
@@ -79,27 +79,27 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'brooklyn_test',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Pass12345',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'da54b58a2b7a3l',
-        'USER': 'cigluvmdipsymi',
-        'PASSWORD': '877209d8bc4e0dfcbc12d8f3ae1b27057b27ab4200e8f08a68b76c9ffcc2af8c',
-        'HOST': 'ec2-54-217-245-9.eu-west-1.compute.amazonaws.com',
+        'NAME': 'brooklyn_test',
+        'USER': 'postgres',
+        'PASSWORD': 'Pass12345',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'da54b58a2b7a3l',
+#         'USER': 'cigluvmdipsymi',
+#         'PASSWORD': '877209d8bc4e0dfcbc12d8f3ae1b27057b27ab4200e8f08a68b76c9ffcc2af8c',
+#         'HOST': 'ec2-54-217-245-9.eu-west-1.compute.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -139,10 +139,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static-files", "static-root")
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static", "static-root")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = "account.User"
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
