@@ -4,7 +4,7 @@
 }
 
 #brooklyn_main_text {
-  font-family: "Night_Machine", serif;
+    font-family: "Night_Machine", serif;
 }
 
 #mdb-color {
@@ -14,4 +14,14 @@
 
 #for__you {
     color: hotpink;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
 }
