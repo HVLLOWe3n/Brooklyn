@@ -13,7 +13,7 @@ SECRET_KEY = 'nc&@^=26@iwdg0t#v9x3b+9iw@%7c=%^ih#_1li!-z_#cc+xqx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost']  # '.herokuapp.com', 'localhost'
+ALLOWED_HOSTS = []  # '.herokuapp.com', 'localhost'
 
 # Application definition
 
@@ -131,9 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "live-static", "static-root")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = "account.User"
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

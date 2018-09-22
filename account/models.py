@@ -1,49 +1,13 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
-from django.contrib.auth.models import PermissionsMixin
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
+from django.dispatch import receiver
 
 from account.utils import upload_location_avatar
-
-
-# TODO: Fix this trouble.
-# TODO: Fixed
-class UserManager(BaseUserManager):
-    use_in_migrations = True
-
-    def _create_user(self, email, password, **extra_fields):
-        """
-        Create and save a User with the given email and password
-        :param email:
-        :param password:
-        :param extra_fields:
-        :return: User
-        """
-        if not email:
-            raise ValueError("Error - The Given email mustbe set")
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-
-        return user
-
-    def create_user(self, email, password=None, **extra_fields):
-        extra_fields.setdefault("is_superuser", False)
-        extra_fields.setdefault("is_stuff", False)
-        return self._create_user(email, password, **extra_fields)
-
-    def create_superuser(self, email, password, **extra_fields):
-        extra_fields.setdefault("is_superuser", True)
-        extra_fields.setdefault("is_stuff", True)
-
-        if extra_fields.get("is_superuser") is not True:
-            raise ValueError("Error - Superuser must have is_superuser=True")
-
-        return self._create_user(email, password, **extra_fields)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
