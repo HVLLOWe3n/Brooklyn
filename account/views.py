@@ -17,10 +17,10 @@ class SignUpView(CreateView):
     success_url = 'confirm/'
 
     def form_valid(self, form):
-        valid = super(UserForms, self).form_valid(form)
+        valid = super(SignUpView, self).form_valid(form)
         email, username, password = form.cleaned_data.get('email'), form.cleaned_data.get('username'), form.cleaned_data.get('password')
         self.request.user.is_active = False
-        self.request.user.save()
+        # self.request.user.save()
 
         current_site = get_current_site(self.request)
         mail_subject = 'Activate you Brooklyn Profile.'
@@ -30,7 +30,7 @@ class SignUpView(CreateView):
             'uid': urlsafe_base64_encode(force_bytes(self.request.user.pk)),
             'token': account_activation_token.make_token(self.request.user),
         })
-        to_email = form.cleaned_data('email')
+        to_email = form.cleaned_data.get('email')
         email = EmailMessage(
             mail_subject, message, to=[to_email]
         ).send()
