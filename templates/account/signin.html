@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block content %}
-    <form action="" method="post"> {% csrf_token %}
+    <form method="post"> {% csrf_token %}
         <input type="email" placeholder="email" name="email">
         <input type="text" placeholder="username" name="username">
         <input type="password" placeholder="password" name="password">

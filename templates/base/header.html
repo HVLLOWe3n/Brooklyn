@@ -40,9 +40,9 @@
             <nav class="navbar ">
                 <form class="form-inline">
                     {% if not user.is_authenticated %}
-                        <button class="btn btn-outline-success" type="button">Sign Up</button>
+                        <a href="{% url 'signup' %}"><button class="btn btn-outline-success" type="button">Sign Up</button></a>
                         <button class="btn btn-outline-secondary" id="signin__button" type="button"><a
-                                href="{% url 'login' %}"></a>Sign In</button>
+                                href="{% url 'signup' %}"></a>Sign In</button>
                     {% endif %}
                 </form>
             </nav>

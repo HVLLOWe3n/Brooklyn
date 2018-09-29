@@ -1,9 +1,8 @@
 from django.urls import path, re_path
 
-from account.views import SignUpView, ConfirmLinkView
+from account.views import SignUpView, activate_link
 
 urlpatterns = [
-    path('login/', SignUpView.as_view(), name='login'),
-    path('confirm/', ConfirmLinkView.as_view(), name='confirm')
-
+    path('login/', SignUpView.as_view(), name='signup'),
+    path('activate/<str:uidb64>/<str:token>/', activate_link, name='activate')
 ]
