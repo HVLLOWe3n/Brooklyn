@@ -38,3 +38,5 @@ class SignUpView(CreateView):
 
 class ConfirmLinkView(LoginRequiredMixin, CreateView):
     pass
+
+
